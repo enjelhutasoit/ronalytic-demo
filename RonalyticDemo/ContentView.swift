@@ -9,15 +9,28 @@ import Ronalytic
 import SwiftUI
 
 struct ContentView: View {
+    private let actions = DemoActions.live
+    @State private var lastAction = "none"
+    
     var body: some View {
         VStack(spacing: 12) {
-            Text("Ronalytic Demo!")
-                .font(.title)
+            Text("Ronalytic Demo!").font(.title)
+            Text("SDK \(RonalyticInfo.version)").foregroundStyle(.secondary)
             
-            Text("SDK \(RonalyticInfo.version)")
-                .foregroundStyle(.secondary)
+            Button("Track purchase") { run("purchase", actions.purchase) }
+            Button("Open Home screen") { run("screen Home", actions.openHome) }
+            Button("Identify user-42") { run("identify", actions.login) }
+            Button("Flush") { run("flush", actions.sendQueued) }
+
+            Text("Last action: \(lastAction)").font(.footnote)
         }
+        .buttonStyle(.borderedProminent)
         .padding()
+    }
+    
+    private func run(_ label: String, _ action: () -> Void) {
+        action()
+        lastAction = label
     }
 }
 

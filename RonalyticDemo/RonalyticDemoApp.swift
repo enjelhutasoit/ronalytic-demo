@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct RonalyticDemoApp: App {
+    
+    init() {
+        configureAnalytics()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

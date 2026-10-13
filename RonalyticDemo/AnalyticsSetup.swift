@@ -5,13 +5,16 @@
 import Foundation
 import Ronalytic
 import RonalyticFileStorage
+import RonalyticHTTP
 
 /// Builds the SDK config. Separate from `configure` so tests can use it.
-func makeAnalyticsConfig(directory: URL) -> RonalyticConfig {
+func makeAnalyticsConfig(directory: URL, endpoint: URL? = nil) -> RonalyticConfig {
     var config = RonalyticConfig.iOSDefaults(
-        storage: FileQueueStorage(directory: directory, writerID: "app")
+        storage: FileQueueStorage(directory: directory, writerID: "app"),
+        transport: endpoint.map { HTTPTransport(endpoint: $0) }
     )
     config.plugins = [ConsoleDestination()]
+    config.flushInterval = .seconds(10)   // short, so the demo shows results quickly
     #if DEBUG
     config.logger = ConsoleLogger(level: .verbose)
     #endif
@@ -28,6 +31,11 @@ func analyticsDirectory() -> URL {
 
 /// Call once, as early as possible.
 func configureAnalytics() {
-    RonalyticSDK.configure(makeAnalyticsConfig(directory: analyticsDirectory()))
+    RonalyticSDK.configure(
+        makeAnalyticsConfig(
+            directory: analyticsDirectory(),
+            endpoint: EndpointSettings.url
+        )
+    )
     RonalyticSDK.track("app_launched")
 }

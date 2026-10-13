@@ -18,6 +18,7 @@ func makeAnalyticsConfig(directory: URL, endpoint: URL? = nil) -> RonalyticConfi
     #if DEBUG
     config.logger = ConsoleLogger(level: .verbose)
     #endif
+    config.consentProvider = DemoConsentProvider()
     return config
 }
 

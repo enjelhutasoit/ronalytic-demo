@@ -20,10 +20,18 @@ final class AnalyticsSetupTests: XCTestCase {
         XCTAssertEqual(config.plugins.map(\.name), ["console-destination"])
     }
     
-    func test_config_hasNoTransportYet() {
-        let config = makeAnalyticsConfig(directory: directory)
+    func test_config_hasNoTransportWithoutEndpoint() {
+        let config = makeAnalyticsConfig(directory: directory, endpoint: nil)
 
         XCTAssertNil(config.transport)
+    }
+
+    func test_config_hasTransportWithEndpoint() {
+        let url = URL(string: "https://webhook.site/abc")
+
+        let config = makeAnalyticsConfig(directory: directory, endpoint: url)
+
+        XCTAssertNotNil(config.transport)
     }
 
     func test_config_hasLifecycleObserverFromIOSDefaults() {

@@ -2,10 +2,13 @@
 // Copyright (c) 2026 Enjel Hutasoit
 //
 
+import Ronalytic
 import SwiftUI
 
 struct SettingsView: View {
     @State private var text = EndpointSettings.text
+    @State private var consent = "unknown"
+    @State private var optedOut = PrivacySettings.optedOut
 
     var body: some View {
         NavigationView {
@@ -16,6 +19,7 @@ struct SettingsView: View {
                         .autocorrectionDisabled()
                         .keyboardType(.URL)
                 }
+                
                 Section {
                     Text(text.isEmpty ? "No endpoint: events stay on disk."
                          : parseEndpoint(text) == nil ? "Invalid: must be https."
@@ -24,9 +28,32 @@ struct SettingsView: View {
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
+                
+                Section("Consent (asked by the app)") {
+                    Picker("Consent", selection: $consent) {
+                        Text("Unknown").tag("unknown")
+                        Text("Granted").tag("granted")
+                        Text("Denied").tag("denied")
+                    }
+                    .pickerStyle(.segmented)
+                    Text("Unknown or denied: events are dropped. Takes effect immediately.")
+                        .font(.footnote).foregroundStyle(.secondary)
+                }
+                
+                Section("Opt-out (chosen by the user)") {
+                    Toggle("Stop tracking me", isOn: $optedOut)
+                }
             }
             .navigationTitle("Settings")
             .onChange(of: text) { EndpointSettings.text = $0 }
+            .onAppear { consent = DemoConsentProvider().currentRaw }
+            .onChange(of: consent) { value in
+                DemoConsentProvider().set(value == "granted" ? .granted : value == "denied" ? .denied : .unknown)
+            }
+            .onChange(of: optedOut) { value in
+                PrivacySettings.optedOut = value
+                value ? RonalyticSDK.optOut() : RonalyticSDK.optIn()
+            }
         }
     }
 }

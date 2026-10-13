@@ -50,4 +50,10 @@ final class AnalyticsSetupTests: XCTestCase {
         let files = try FileManager.default.contentsOfDirectory(atPath: directory.path)
         XCTAssertTrue(files.contains("segment-app.jsonl"))
     }
+    
+    func test_config_hasAConsentProvider() {
+        let config = makeAnalyticsConfig(directory: directory)
+
+        XCTAssertNotNil(config.consentProvider)
+    }
 }

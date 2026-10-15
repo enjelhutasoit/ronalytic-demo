@@ -12,6 +12,12 @@
 		EF381423307CD79D00AF9272 /* RonalyticHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = EF381422307CD79D00AF9272 /* RonalyticHTTP */; };
 		EF381426307CD7CC00AF9272 /* Ronalytic in Frameworks */ = {isa = PBXBuildFile; productRef = EF381425307CD7CC00AF9272 /* Ronalytic */; };
 		EF38142A307CDBE300AF9272 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EF381429307CDBE300AF9272 /* README.md */; };
+		EF42C22F3080B62D002BD391 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF42C22E3080B62C002BD391 /* WidgetKit.framework */; };
+		EF42C2313080B62D002BD391 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF42C2303080B62D002BD391 /* SwiftUI.framework */; };
+		EF42C23E3080B631002BD391 /* RonalyticWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EF42C22D3080B62C002BD391 /* RonalyticWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EF42C24F3080B740002BD391 /* RonalyticCore in Frameworks */ = {isa = PBXBuildFile; productRef = EF42C24E3080B740002BD391 /* RonalyticCore */; };
+		EF42C2513080B740002BD391 /* RonalyticFileStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EF42C2503080B740002BD391 /* RonalyticFileStorage */; };
+		EF42C2533080B756002BD391 /* RonalyticFileStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EF42C2523080B756002BD391 /* RonalyticFileStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,18 +35,80 @@
 			remoteGlobalIDString = EF3813E0307CD62F00AF9272;
 			remoteInfo = RonalyticDemo;
 		};
+		EF42C23C3080B631002BD391 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3813D9307CD62F00AF9272 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF42C22C3080B62C002BD391;
+			remoteInfo = RonalyticWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF42C23F3080B631002BD391 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EF42C23E3080B631002BD391 /* RonalyticWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EF3813E1307CD62F00AF9272 /* RonalyticDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RonalyticDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3813F1307CD63500AF9272 /* RonalyticDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RonalyticDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3813FB307CD63600AF9272 /* RonalyticDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RonalyticDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF381429307CDBE300AF9272 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EF42C22D3080B62C002BD391 /* RonalyticWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RonalyticWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF42C22E3080B62C002BD391 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EF42C2303080B62D002BD391 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EF42C2423080B631002BD391 /* Exceptions for "RonalyticWidget" folder in "RonalyticWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EF42C22C3080B62C002BD391 /* RonalyticWidgetExtension */;
+		};
+		EF42C24B3080B700002BD391 /* Exceptions for "RonalyticDemo" folder in "RonalyticWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DemoConsentProvider.swift,
+				DemoShared.swift,
+				ExtensionConfig.swift,
+			);
+			target = EF42C22C3080B62C002BD391 /* RonalyticWidgetExtension */;
+		};
+		EF42C25D3080B8C7002BD391 /* Exceptions for "RonalyticWidget" folder in "RonalyticDemoTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				WidgetAnalytics.swift,
+			);
+			target = EF3813F0307CD63500AF9272 /* RonalyticDemoTests */;
+		};
+		EF42C25F3080C053002BD391 /* Exceptions for "RonalyticDemo" folder in "RonalyticDemoTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DemoShared.swift,
+				ExtensionConfig.swift,
+			);
+			target = EF3813F0307CD63500AF9272 /* RonalyticDemoTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EF3813E3307CD62F00AF9272 /* RonalyticDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EF42C25F3080C053002BD391 /* Exceptions for "RonalyticDemo" folder in "RonalyticDemoTests" target */,
+				EF42C24B3080B700002BD391 /* Exceptions for "RonalyticDemo" folder in "RonalyticWidgetExtension" target */,
+			);
 			path = RonalyticDemo;
 			sourceTree = "<group>";
 		};
@@ -52,6 +120,15 @@
 		EF3813FE307CD63600AF9272 /* RonalyticDemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = RonalyticDemoUITests;
+			sourceTree = "<group>";
+		};
+		EF42C2323080B62D002BD391 /* RonalyticWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EF42C25D3080B8C7002BD391 /* Exceptions for "RonalyticWidget" folder in "RonalyticDemoTests" target */,
+				EF42C2423080B631002BD391 /* Exceptions for "RonalyticWidget" folder in "RonalyticWidgetExtension" target */,
+			);
+			path = RonalyticWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -71,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF42C2533080B756002BD391 /* RonalyticFileStorage in Frameworks */,
 				EF381426307CD7CC00AF9272 /* Ronalytic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +157,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF42C22A3080B62C002BD391 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF42C24F3080B740002BD391 /* RonalyticCore in Frameworks */,
+				EF42C2313080B62D002BD391 /* SwiftUI.framework in Frameworks */,
+				EF42C2513080B740002BD391 /* RonalyticFileStorage in Frameworks */,
+				EF42C22F3080B62D002BD391 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +181,7 @@
 				EF3813E3307CD62F00AF9272 /* RonalyticDemo */,
 				EF3813F4307CD63500AF9272 /* RonalyticDemoTests */,
 				EF3813FE307CD63600AF9272 /* RonalyticDemoUITests */,
+				EF42C2323080B62D002BD391 /* RonalyticWidget */,
 				EF381424307CD7CC00AF9272 /* Frameworks */,
 				EF3813E2307CD62F00AF9272 /* Products */,
 			);
@@ -103,6 +193,7 @@
 				EF3813E1307CD62F00AF9272 /* RonalyticDemo.app */,
 				EF3813F1307CD63500AF9272 /* RonalyticDemoTests.xctest */,
 				EF3813FB307CD63600AF9272 /* RonalyticDemoUITests.xctest */,
+				EF42C22D3080B62C002BD391 /* RonalyticWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +201,8 @@
 		EF381424307CD7CC00AF9272 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF42C22E3080B62C002BD391 /* WidgetKit.framework */,
+				EF42C2303080B62D002BD391 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,10 +217,12 @@
 				EF3813DD307CD62F00AF9272 /* Sources */,
 				EF3813DE307CD62F00AF9272 /* Frameworks */,
 				EF3813DF307CD62F00AF9272 /* Resources */,
+				EF42C23F3080B631002BD391 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EF42C23D3080B631002BD391 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				EF3813E3307CD62F00AF9272 /* RonalyticDemo */,
@@ -161,6 +256,7 @@
 			name = RonalyticDemoTests;
 			packageProductDependencies = (
 				EF381425307CD7CC00AF9272 /* Ronalytic */,
+				EF42C2523080B756002BD391 /* RonalyticFileStorage */,
 			);
 			productName = RonalyticDemoTests;
 			productReference = EF3813F1307CD63500AF9272 /* RonalyticDemoTests.xctest */;
@@ -189,6 +285,30 @@
 			productReference = EF3813FB307CD63600AF9272 /* RonalyticDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EF42C22C3080B62C002BD391 /* RonalyticWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF42C2433080B631002BD391 /* Build configuration list for PBXNativeTarget "RonalyticWidgetExtension" */;
+			buildPhases = (
+				EF42C2293080B62C002BD391 /* Sources */,
+				EF42C22A3080B62C002BD391 /* Frameworks */,
+				EF42C22B3080B62C002BD391 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EF42C2323080B62D002BD391 /* RonalyticWidget */,
+			);
+			name = RonalyticWidgetExtension;
+			packageProductDependencies = (
+				EF42C24E3080B740002BD391 /* RonalyticCore */,
+				EF42C2503080B740002BD391 /* RonalyticFileStorage */,
+			);
+			productName = RonalyticWidgetExtension;
+			productReference = EF42C22D3080B62C002BD391 /* RonalyticWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,6 +329,9 @@
 					EF3813FA307CD63600AF9272 = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = EF3813E0307CD62F00AF9272;
+					};
+					EF42C22C3080B62C002BD391 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -232,6 +355,7 @@
 				EF3813E0307CD62F00AF9272 /* RonalyticDemo */,
 				EF3813F0307CD63500AF9272 /* RonalyticDemoTests */,
 				EF3813FA307CD63600AF9272 /* RonalyticDemoUITests */,
+				EF42C22C3080B62C002BD391 /* RonalyticWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +377,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EF3813F9307CD63600AF9272 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF42C22B3080B62C002BD391 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,6 +414,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF42C2293080B62C002BD391 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -295,6 +433,11 @@
 			isa = PBXTargetDependency;
 			target = EF3813E0307CD62F00AF9272 /* RonalyticDemo */;
 			targetProxy = EF3813FC307CD63600AF9272 /* PBXContainerItemProxy */;
+		};
+		EF42C23D3080B631002BD391 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF42C22C3080B62C002BD391 /* RonalyticWidgetExtension */;
+			targetProxy = EF42C23C3080B631002BD391 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -423,9 +566,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RonalyticDemo/RonalyticDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RonalyticDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = FN97V72AGN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,9 +597,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RonalyticDemo/RonalyticDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RonalyticDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = FN97V72AGN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -546,6 +693,64 @@
 			};
 			name = Release;
 		};
+		EF42C2403080B631002BD391 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RonalyticWidget/RonalyticWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FN97V72AGN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RonalyticWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RonalyticWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjelhutasoit.RonalyticDemo.RonalyticWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF42C2413080B631002BD391 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RonalyticWidget/RonalyticWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FN97V72AGN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RonalyticWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RonalyticWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enjelhutasoit.RonalyticDemo.RonalyticWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -585,6 +790,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EF42C2433080B631002BD391 /* Build configuration list for PBXNativeTarget "RonalyticWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF42C2403080B631002BD391 /* Debug */,
+				EF42C2413080B631002BD391 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -611,6 +825,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF38141D307CD79D00AF9272 /* XCLocalSwiftPackageReference "../ronalytic-sdk" */;
 			productName = Ronalytic;
+		};
+		EF42C24E3080B740002BD391 /* RonalyticCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF38141D307CD79D00AF9272 /* XCLocalSwiftPackageReference "../ronalytic-sdk" */;
+			productName = RonalyticCore;
+		};
+		EF42C2503080B740002BD391 /* RonalyticFileStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF38141D307CD79D00AF9272 /* XCLocalSwiftPackageReference "../ronalytic-sdk" */;
+			productName = RonalyticFileStorage;
+		};
+		EF42C2523080B756002BD391 /* RonalyticFileStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF38141D307CD79D00AF9272 /* XCLocalSwiftPackageReference "../ronalytic-sdk" */;
+			productName = RonalyticFileStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

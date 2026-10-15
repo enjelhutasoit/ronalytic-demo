@@ -6,6 +6,10 @@ import XCTest
 import Ronalytic
 @testable import RonalyticDemo
 
+private struct ConsentGrantedStub: ConsentProvider {
+    func status() async -> ConsentStatus { .granted }
+}
+
 final class AnalyticsSetupTests: XCTestCase {
     private let directory = FileManager.default.temporaryDirectory
         .appendingPathComponent("demo-tests-\(UUID().uuidString)", isDirectory: true)
@@ -41,7 +45,11 @@ final class AnalyticsSetupTests: XCTestCase {
     }
 
     func test_trackedEvent_isWrittenToTheQueueFolder() async throws {
-        let client = RonalyticClient(config: makeAnalyticsConfig(directory: directory))
+        let client = RonalyticClient(config: makeAnalyticsConfig(
+            directory: directory,
+            consent: ConsentGrantedStub(),
+            optOutStore: InMemoryOptOutStore()
+        ))
 
         client.track("demo_event")
         client.flush()

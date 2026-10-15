@@ -1,9 +1,10 @@
 # Ronalytic Demo
+<p align="center">
+   <img src="https://github.com/enjelhutasoit/ronalytic-demo/blob/main/RonalyticDemo/Assets.xcassets/ronalytic-logo-wide.png?raw=1" alt="Ronalytic logo"  height="150">
+</p>
 
 A SwiftUI app that uses the [Ronalytic SDK](https://github.com/enjelhutasoit-com/ronalytic-sdk)
 only through its public API, like a real client would.
-
-![Demo](docs/demo.gif)
 
 ## Run it
 
@@ -40,6 +41,8 @@ only through its public API, like a real client would.
 3. Paste a webhook.site URL, relaunch, track, then Flush. The batch appears on webhook.site.
 4. Turn on "Stop tracking me". New events are dropped and counted as opt-out.
 5. Add the widget, then Flush from the app. The widget's event is in the same batch.
+
+![Demo](RonalyticDemo/docs/demo.gif)
 
 ## Limits of this demo
 

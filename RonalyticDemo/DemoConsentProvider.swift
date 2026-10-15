@@ -3,16 +3,17 @@
 //
 
 import Foundation
-import Ronalytic
+import RonalyticCore
 
 /// Example of how an app connects its own consent choice to the SDK.
 /// Stores only the suite name, because UserDefaults is not Sendable in older SDKs.
+/// The default is the App Group, so the app and the widget share one answer.
 struct DemoConsentProvider: ConsentProvider {
     private let suiteName: String?
     private let key = "demo.consent"
 
     /// nil means the standard defaults.
-    init(suiteName: String? = nil) {
+    init(suiteName: String? = DemoShared.groupID) {
         self.suiteName = suiteName
     }
 

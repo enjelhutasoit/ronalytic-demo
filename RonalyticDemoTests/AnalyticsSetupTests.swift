@@ -53,7 +53,7 @@ final class AnalyticsSetupTests: XCTestCase {
 
         client.track("demo_event")
         client.flush()
-        try await Task.sleep(nanoseconds: 300_000_000)
+        await client.waitUntilIdle()
 
         let files = try FileManager.default.contentsOfDirectory(atPath: directory.path)
         XCTAssertTrue(files.contains("segment-app.jsonl"))

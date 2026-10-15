@@ -8,7 +8,7 @@ import SwiftUI
 struct SettingsView: View {
     @State private var text = EndpointSettings.text
     @State private var consent = "unknown"
-    @State private var optedOut = PrivacySettings.optedOut
+    @State private var optedOut = RonalyticSDK.isOptedOut() ?? false
 
     var body: some View {
         NavigationView {
@@ -51,7 +51,7 @@ struct SettingsView: View {
                 DemoConsentProvider().set(value == "granted" ? .granted : value == "denied" ? .denied : .unknown)
             }
             .onChange(of: optedOut) { value in
-                PrivacySettings.optedOut = value
+                optedOut = value
                 value ? RonalyticSDK.optOut() : RonalyticSDK.optIn()
             }
         }
